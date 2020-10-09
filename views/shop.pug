@@ -1,0 +1,12 @@
+extends base.pug
+
+block content
+  if products.length > 0
+    each product in products
+      .product-item
+        h1 #{product.title}
+        h2 $19.99
+        p An interesting book
+        button Add To Cart
+  else
+    h1 No Products
