@@ -4,7 +4,7 @@ exports.getAddProduct = (req, res) => {
   const context = {
     title: 'Add Product'
   }
-  res.render('add-product', { ...context })
+  res.render('admin/add-product', { ...context })
 }
 
 exports.postAddProduct = (req, res) => {
@@ -14,10 +14,11 @@ exports.postAddProduct = (req, res) => {
 }
 
 exports.getProducts = (req, res) => {
-  const products = Product.fetchAll()
-  const context = {
-    title: 'All Products',
-    products: products
-  }
-  res.render('shop', { ...context })
+  Product.fetchAll(products => {
+    const context = {
+      title: 'All Products',
+      products: products
+    }
+    res.render('shop/product-list', { ...context })
+  })
 }
