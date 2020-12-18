@@ -7,6 +7,6 @@ admin.get('/add-product', adminController.getAddProduct)
 admin.post('/add-product', adminController.postAddProduct)
 // admin.get('/edit-product/:id', adminController.getEditProduct)
 // admin.post('/edit-product/:id', adminController.postEditProduct)
-admin.get('/product-list', adminController.getProducts)
+admin.get('/products', adminController.getProducts)
 
 module.exports = admin
