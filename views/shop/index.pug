@@ -5,8 +5,9 @@ block content
     each product in products
       .product-item
         h1 #{product.title}
-        h2 $19.99
-        p An interesting book
+        h2 $#{product.price}
+        img(src=product.imageUrl alt=product.title width='100')
+        p #{product.description}
         button Add To Cart
   else
     h1 No Products
