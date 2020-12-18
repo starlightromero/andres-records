@@ -8,9 +8,10 @@ block content
         h2 $#{product.price}
         img(src=product.imageUrl alt=product.title width='100')
         p #{product.description}
-        a(href='/admin/edit-product')
+        a(href='/admin/edit-product/' + product.id)
           button Edit
         form(action='/admin/delete-product' method='POST')
+          input(type='hidden' name='productId' value=product.id)
           button(type='submit') Delete
   else
     h1 No Products
