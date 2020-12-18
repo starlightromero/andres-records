@@ -4,6 +4,6 @@ block content
   form(method='POST')
     input(type='text', name='title', placeholder='Title')
     input(type='text', name='imageUrl', placeholder='Image URL')
-    input(type='number', name='price', placeholder='Price')
+    input(type='number', name='price', placeholder='Price', step='0.01', min='0')
     textarea(name='description', rows='5', placeholder='Description')
     button(type='submit') Add Product
