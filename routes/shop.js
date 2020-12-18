@@ -8,6 +8,7 @@ shop.get('/products', shopController.getProducts)
 shop.get('/products/:productId', shopController.getProduct)
 shop.get('/cart', shopController.getCart)
 shop.post('/cart', shopController.postCart)
+shop.post('/cart/delete-product', shopController.postCartDeleteProduct)
 shop.get('/orders', shopController.getOrders)
 shop.get('/checkout', shopController.getCheckout)
 
