@@ -8,6 +8,8 @@ block content
         h2 $#{product.price}
         img(src=product.imageUrl alt=product.title width='100')
         p #{product.description}
-        button Add To Cart
+        form(action='/cart' method='POST')
+          input(type='hidden' name='productId' value=product.id)
+          button(type='submit') Add To Cart
   else
     h1 No Products
