@@ -7,14 +7,20 @@ exports.getAddProduct = (req, res) => {
 }
 
 exports.postAddProduct = (req, res) => {
-  const product = new Product(req.body.title)
+  const { title, imageUrl, price, description } = req.body
+  const product = new Product(
+    title,
+    imageUrl,
+    price,
+    description
+  )
   product.save()
   res.redirect('/')
 }
 
 exports.getProducts = (req, res) => {
   Product.fetchAll(products => {
-    res.render('admin/products', {
+    res.render('admin/product-list', {
       title: 'Admin Products',
       products: products
     })
