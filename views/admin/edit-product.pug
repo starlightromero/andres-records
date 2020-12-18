@@ -1,6 +1,10 @@
 extends ../base.pug
 
 block content
-  form(method='POST')
-    input(type='text' name='title')
-    button(type='submit') Edit Product
+  form(method='POST' action='/admin/edit-product')
+    input(type='text' name='title' placeholder='Title' value=product.title)
+    input(type='text' name='imageUrl' placeholder='Image URL' value=product.imageUrl)
+    input(type='number' name='price' placeholder='Price' step='0.01', min='0' value=product.price)
+    textarea(name='description' rows='5' placeholder='Description') #{product.description}
+    input(type='hidden' name='productId' value=product.id)
+    button(type='submit') Update Product
