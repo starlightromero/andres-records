@@ -1,4 +1,11 @@
 extends ../base.pug
 
 block content
-  h1 Product Detail
+  h1 #{product.title}
+  hr
+  img(src=product.imageUrl alt=product.title width='100')
+  h2 #{product.price}
+  p #{product.description}
+  form(action='/cart' method='POST')
+    input(type='hidden' name='productId' value=product.id)
+    button(type='submit') Add To Cart
