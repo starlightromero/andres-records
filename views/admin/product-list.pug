@@ -1,4 +1,16 @@
 extends ../base.pug
 
 block content
-  h1 Product List
+  if products.length > 0
+    each product in products
+      .product-item
+        h1 #{product.title}
+        h2 $#{product.price}
+        img(src=product.imageUrl alt=product.title width='100')
+        p #{product.description}
+        a(href='/admin/edit-product')
+          button Edit
+        form(action='/admin/delete-product' method='POST')
+          button(type='submit') Delete
+  else
+    h1 No Products
