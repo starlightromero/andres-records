@@ -8,7 +8,7 @@ block content
         h2 $#{product.price}
         img(src=product.imageUrl alt=product.title width='100')
         p #{product.description}
-        a(href='/products/' + product.id)
+        a(href=`/products/${product.id}`)
           button Details
           form(action='/cart' method='POST')
             input(type='hidden' name='productId' value=product.id)
